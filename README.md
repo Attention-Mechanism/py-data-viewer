@@ -1,8 +1,22 @@
 # Py-Data-Viewer
 
-`py-data-viewer` is a Python library designed to help mushroom people (like me) explore and navigate complex data structures with ease. It provides a clear view of nested dictionaries, lists, objects, and more, making debugging and data analysis more efficient.
+`py-data-viewer` is a Python library designed to help mushroom people (like me) explore and navigate complex data structures with ease. It provides a clear view of nested dictionaries, lists, objects, and more, making debugging and data analysis more efficient. Trees for complex data structures, Trees for simple data structures, Trees for everything!!
 
----
+## No more confusion with complex data structures or asking "what's inside this dictionary!?"
+
+```python
+from py_data_viewer import vprint
+
+async def some_async_fn():
+    response = await some_api_call()
+    vprint(response)
+```
+<img src="img/screen-2.webp" width=70% height=70%>
+
+## No more looking for properties in a long list of dictionaries or objects!
+
+<img src="img/screen-1.webp" width=70% height=70%>
+
 
 ## Features
 
