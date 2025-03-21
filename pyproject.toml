@@ -36,9 +36,9 @@ Homepage = "https://github.com/Attention-Mechanism/py-data-viewer"
 Repository = "https://github.com/Attention-Mechanism/py-data-viewer"
 
 [tool.poetry.group.dev.dependencies]
-black = "^22.3.0"
-ruff = "^0.0.1"
-pytest = "^6.2.4"
+black = "^23.9.1"
+ruff = "^0.11.2"
+pytest = "^7.4.2"
 
 [tool.ruff]
 target-version = "py38"
