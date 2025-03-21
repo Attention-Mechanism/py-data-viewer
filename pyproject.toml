@@ -30,3 +30,10 @@ license-files = ["LICENSE"]
 
 [project.urls]
 Homepage = "https://github.com/"
+
+[project.optional-dependencies]
+dev = [
+    "ruff",
+    "pytest",
+    "black",
+]
