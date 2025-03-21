@@ -19,7 +19,7 @@
 To install the package, use pip:
 
 ```bash
-pip install data-viewer
+pip install py-data-viewer
 ```
 
 ---
@@ -33,7 +33,7 @@ The `vprint` function is the easiest way to explore data structures in your Pyth
 #### Example: Exploring an API Response
 
 ```python
-from data_viewer import vprint
+from py_data_viewer import vprint
 
 # Simulated API response
 response = {
@@ -132,5 +132,5 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 ## Links
 
-- **Homepage**: [GitHub Repository](https://github.com/)
-- **Issues**: [Report Issues](https://github.com/)
+- **Homepage**: [GitHub Repository](https://github.com/Attention-Mechanism/data-viewer)
+- **Issues**: [Report Issues](https://github.com/Attention-Mechanism/data-viewer)
