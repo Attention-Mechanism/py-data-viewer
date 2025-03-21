@@ -3,7 +3,7 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [project]
-name = "data-viewer"
+name = "py-data-viewer"
 version = "0.0.1"
 authors = [
   { name="Matt Lucero", email="matt_lucero@outlook.com" },
