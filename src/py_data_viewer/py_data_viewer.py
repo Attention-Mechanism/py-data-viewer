@@ -298,8 +298,6 @@ def vprint(
     data: Any,
     var_name: Optional[str] = None,
     colorize: bool = True,
-    tree_view: bool = True,
-    indent_size: int = 2,
 ):
     """
     Shorthand for printing the exploration of a data structure using DataViewer.
