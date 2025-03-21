@@ -1,5 +1,5 @@
 import unittest
-from data_viewer import vprint
+from py_data_viewer import vprint
 
 
 class TestDataViewer(unittest.TestCase):
