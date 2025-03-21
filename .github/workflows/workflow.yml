@@ -24,17 +24,13 @@ jobs:
         python -m pip install --upgrade pip
         python -m pip install hatch
         hatch env create
-        hatch env activate
         hatch run pip install -e .[dev]
     - name: Lint with ruff
       run: |
-        hatch env activate
         hatch run ruff check .
     - name: Format with black
       run: |
-        hatch env activate
         hatch run black --check .
     - name: Test with pytest
       run: |
-        hatch env activate
         hatch run pytest
