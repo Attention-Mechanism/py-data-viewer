@@ -102,7 +102,6 @@ vprint(data, var_name="data", tree_view=True)
 The `vprint` function supports several options to customize the output:
 
 - `var_name`: Specify the variable name to display in the output.
-- `tree_view`: Enable or disable tree-like visualization (default: `True`).
 - `indent_size`: Set the number of spaces for indentation (default: `2`).
 - `colorize`: Enable or disable colorized output (default: `True`).
 
