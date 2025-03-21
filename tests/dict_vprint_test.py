@@ -1,4 +1,4 @@
-from src.py_data_viewer import vprint
+from src.py_data_viewer.py_data_viewer import vprint
 import io  # For capturing output
 import sys  # For redirecting stdout
 
