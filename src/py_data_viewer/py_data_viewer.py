@@ -304,9 +304,9 @@ class DataViewer:
 def vprint(
     data: Any,
     var_name: Optional[str] = None,
-    indent_size: int = 2,
     colorize: bool = True,
     tree_view: bool = True,
+    indent_size: int = 2,
 ):
     """
     Shorthand for printing the exploration of a data structure using DataViewer.
@@ -314,9 +314,9 @@ def vprint(
     Args:
         data (Any): The data structure to explore.
         var_name (Optional[str], optional): Variable name for the root of the data structure. Defaults to None.
-        indent_size (int, optional): Indentation size for nested levels. Defaults to 2.
         colorize (bool, optional): Enable/disable colorized output. Defaults to True.
-        tree_view (bool, optional): Display as a tree structure. Defaults to False.
+        tree_view (bool, optional): Display as a tree structure. Defaults to True.
+        indent_size (int, optional): (Only if tree_view=False) Indentation size for nested levels. Defaults to 2.
     """
     explorer = DataViewer(
         data,
