@@ -3,3 +3,4 @@
 idea
 .pypirc
 dist
+__pycache__
