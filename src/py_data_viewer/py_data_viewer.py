@@ -114,16 +114,12 @@ class DataViewer:
     def __init__(
         self,
         data: Any,
-        indent_size: int = 2,
         colorize: bool = True,
         var_name: Optional[str] = None,
-        tree_view: bool = False,
     ):
         self.data = data
-        self.indent_size = indent_size
         self.colorize = colorize
         self.var_name = var_name or self._uselessly_detect_variable_name()
-        self.tree_view = tree_view
         self.tree_root = None
 
     def _uselessly_detect_variable_name(self):
@@ -180,15 +176,11 @@ class DataViewer:
         """
         prefix = prefix or self.var_name
 
-        if self.tree_view:
-            # Build the tree structure first
-            self.tree_root = TreeNode(prefix, self.data)
-            self._build_tree(self.data, prefix, self.tree_root)
-            # Then print the tree
-            self._print_tree(self.tree_root)
-        else:
-            # Original flat exploration
-            self._explore(self.data, prefix, depth=0)
+        # Build the tree structure first
+        self.tree_root = TreeNode(prefix, self.data)
+        self._build_tree(self.data, prefix, self.tree_root)
+        # Then print the tree
+        self._print_tree(self.tree_root)
 
         return self  # Return self to allow method chaining
 
@@ -263,42 +255,43 @@ class DataViewer:
             )
             self._print_tree(child, new_prefix, is_last_child, depth + 1)
 
-    def _explore(self, data: Any, path: str, depth: int = 0):
-        indent = " " * (depth * self.indent_size)
+    # CAUSING A LOT OF PROBLEMS
+    # def _explore(self, data: Any, path: str, depth: int = 0):
+    #     indent = " " * (depth * self.indent_size)
 
-        if isinstance(data, dict):
-            for key, value in data.items():
-                key_repr = f"['{key}']"
-                path_str = f"{path}{key_repr}"
-                if self.colorize:
-                    colored_path = Colors.colorize_path(path_str)
-                    print(f"{indent}{colored_path} = {repr(value)}")
-                else:
-                    print(f"{indent}{path_str} = {repr(value)}")
-                self._explore(value, path_str, depth + 1)
-        elif isinstance(data, list):
-            for index, value in enumerate(data):
-                index_repr = f"[{index}]"
-                path_str = f"{path}{index_repr}"
-                if self.colorize:
-                    colored_path = Colors.colorize_path(path_str)
-                    print(f"{indent}{colored_path} = {repr(value)}")
-                else:
-                    print(f"{indent}{path_str} = {repr(value)}")
-                self._explore(value, path_str, depth + 1)
-        elif hasattr(data, "__dict__"):  # For objects with attributes
-            for attr, value in vars(data).items():
-                attr_repr = f".{attr}"
-                path_str = f"{path}{attr_repr}"
-                if self.colorize:
-                    colored_path = Colors.colorize_path(path_str)
-                    print(f"{indent}{colored_path} = {repr(value)}")
-                else:
-                    print(f"{indent}{path_str} = {repr(value)}")
-                self._explore(value, path_str, depth + 1)
-        else:
-            # Base case: primitive value bc yes
-            pass
+    #     if isinstance(data, dict):
+    #         for key, value in data.items():
+    #             key_repr = f"['{key}']"
+    #             path_str = f"{path}{key_repr}"
+    #             if self.colorize:
+    #                 colored_path = Colors.colorize_path(path_str)
+    #                 print(f"{indent}{colored_path} = {repr(value)}")
+    #             else:
+    #                 print(f"{indent}{path_str} = {repr(value)}")
+    #             self._explore(value, path_str, depth + 1)
+    #     elif isinstance(data, list):
+    #         for index, value in enumerate(data):
+    #             index_repr = f"[{index}]"
+    #             path_str = f"{path}{index_repr}"
+    #             if self.colorize:
+    #                 colored_path = Colors.colorize_path(path_str)
+    #                 print(f"{indent}{colored_path} = {repr(value)}")
+    #             else:
+    #                 print(f"{indent}{path_str} = {repr(value)}")
+    #             self._explore(value, path_str, depth + 1)
+    #     elif hasattr(data, "__dict__"):  # For objects with attributes
+    #         for attr, value in vars(data).items():
+    #             attr_repr = f".{attr}"
+    #             path_str = f"{path}{attr_repr}"
+    #             if self.colorize:
+    #                 colored_path = Colors.colorize_path(path_str)
+    #                 print(f"{indent}{colored_path} = {repr(value)}")
+    #             else:
+    #                 print(f"{indent}{path_str} = {repr(value)}")
+    #             self._explore(value, path_str, depth + 1)
+    #     else:
+    #         # Base case: primitive value bc yes
+    #         pass
 
 
 def vprint(
@@ -320,10 +313,8 @@ def vprint(
     """
     explorer = DataViewer(
         data,
-        indent_size=indent_size,
         colorize=colorize,
         var_name=var_name or "data",
-        tree_view=tree_view,
     )
     explorer.explore()
 
@@ -387,22 +378,28 @@ if __name__ == "__main__":
         default="dict",
         help="Type of data structure to explore",
     )
-    parser.add_argument(
-        "--indent",
-        type=int,
-        default=2,
-        help="Indentation size for nested levels",
-    )
+
+    # TODO: REMOVE
+    # parser.add_argument(
+    #     "--indent",
+    #     type=int,
+    #     default=2,
+    #     help="Indentation size for nested levels",
+    # )
+
     parser.add_argument(
         "--no-color",
         action="store_true",
         help="Disable colorized output",
     )
-    parser.add_argument(
-        "--tree",
-        action="store_true",
-        help="Display as a tree structure",
-    )
+
+    # TODO: REMOVE
+    # parser.add_argument(
+    #     "--tree",
+    #     action="store_true",
+    #     help="Display as a tree structure",
+    # )
+
     args = parser.parse_args()
 
     # Get the selected sample data
@@ -411,9 +408,7 @@ if __name__ == "__main__":
     print(f"\n--- Exploring {args.type} data structure ---\n")
 
     # Create navigator with selected data and explore it
-    navigator = DataViewer(
-        sample_data, indent_size=args.indent, colorize=not args.no_color, tree_view=args.tree
-    )
+    navigator = DataViewer(sample_data, colorize=not args.no_color)
     navigator.explore()
 
     print("\nUsage examples:")
@@ -422,7 +417,8 @@ if __name__ == "__main__":
     print(f"  python value_navigator.py --type object   # Explore an object")
     print(f"  python value_navigator.py --type namedtuple  # Explore a namedtuple")
     print(f"  python value_navigator.py --type complex  # Explore a complex mixed structure")
-    print(f"  python value_navigator.py --indent 4      # Use 4 spaces for indentation")
+    # TODO: REMOVE
+    # print(f"  python value_navigator.py --indent 4      # Use 4 spaces for indentation")
     print(f"  python value_navigator.py --no-color      # Disable colored output")
 
     print("\nExample with automatically detected variable name:")
