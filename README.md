@@ -11,11 +11,11 @@ async def some_async_fn():
     response = await some_api_call()
     vprint(response)
 ```
-<img src="img/screen-2.webp" width=70% height=70%>
+<img src="img/screen-2.webp" width=80% height=80%>
 
 ## No more looking for properties in a long list of dictionaries or objects!
 
-<img src="img/screen-1.webp" width=70% height=70%>
+<img src="img/screen-1.webp" width=80% height=80%>
 
 
 ## Features
