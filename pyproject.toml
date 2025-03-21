@@ -15,7 +15,6 @@ keywords = [
     "exploration",
 ]
 readme = "README.md"
-requires-python = ">=3.8"
 classifiers = [
     "Programming Language :: Python :: 3",
     "Programming Language :: Python :: 3.8",
@@ -31,7 +30,6 @@ classifiers = [
     "Topic :: Utilities",
 ]
 license = "MIT"
-license-files = ["LICENSE"]
 
 [tool.poetry.urls]
 Homepage = "https://github.com/Attention-Mechanism/py-data-viewer"
