@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "py-data-viewer"
-version = "0.0.5"
+version = "0.0.6"
 authors = [
   { name="Matt Lucero", email="matt_lucero@outlook.com" },
 ]
