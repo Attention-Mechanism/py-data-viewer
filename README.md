@@ -107,7 +107,7 @@ The `vprint` function supports several options to customize the output:
 
 Example:
 ```python
-vprint(data, var_name="custom_data", tree_view=False, indent_size=4, colorize=False)
+vprint(data, var_name="custom_data_name", indent_size=4, colorize=False)
 ```
 
 ---
@@ -131,5 +131,5 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 ## Links
 
-- **Homepage**: [GitHub Repository](https://github.com/Attention-Mechanism/data-viewer)
-- **Issues**: [Report Issues](https://github.com/Attention-Mechanism/data-viewer)
+- **Homepage**: [GitHub Repository](https://github.com/Attention-Mechanism/py-data-viewer)
+- **Issues**: [Report Issues](https://github.com/Attention-Mechanism/py-data-viewer)
