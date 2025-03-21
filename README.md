@@ -1,6 +1,6 @@
-# Data Viewer
+# Py-Data-Viewer
 
-**Data Viewer** is a Python library designed to help mushroom people (like me) explore and navigate complex data structures with ease. It provides a clear view of nested dictionaries, lists, objects, and more, making debugging and data analysis more efficient.
+`py-data-viewer` is a Python library designed to help mushroom people (like me) explore and navigate complex data structures with ease. It provides a clear view of nested dictionaries, lists, objects, and more, making debugging and data analysis more efficient.
 
 ---
 
@@ -82,7 +82,7 @@ response
 #### Example: Exploring a Complex Data Structure
 
 ```python
-from data_viewer import vprint
+from py_data_viewer import vprint
 
 data = {
     "user": {"id": 1, "name": "Alice"},
