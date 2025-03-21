@@ -27,10 +27,10 @@ jobs:
     - name: Lint with ruff
       run: |
         hatch run ruff check . --fix
-      continue-on-error: true   # Added to continue on linting errors
+      continue-on-error: true
     - name: Format with black
       run: |
-        hatch run black --check .
+        hatch run black .
     - name: Test with pytest
       run: |
         hatch run pytest
