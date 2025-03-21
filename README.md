@@ -1,26 +1,28 @@
 # Py-Data-Viewer
 
-`py-data-viewer` is a Python library designed to help mushroom people (like me) explore and navigate complex data structures with ease. It provides a clear view of nested dictionaries, lists, objects, and more, making debugging and data analysis more efficient. Trees for complex data structures, Trees for simple data structures, Trees for everything!!
+`py-data-viewer` is a lightweight Python library that makes exploring and navigating complex data structures in the terminal effortless. It provides a clear, tree-based visualization of nested dictionaries, lists, objects, and more, making debugging and data analysis more efficient. No more getting lost in complex nested structures or struggling to understand what's inside your data or how to access them! 
 
-## No more confusion with complex data structures or asking "what's inside this dictionary!?"
+_Trees for complex data structures, Trees for simple data structures, Trees for everything!!_
+
+### No more confusion with complex data structures or asking "what's inside this dictionary!?"
 
 ```python
 from py_data_viewer import vprint
 
 async def some_async_fn():
     response = await some_api_call()
-    vprint(response)
+    vprint(response) # 👈 pass in full response or part of it! It can handle Iterables[of_any_T]!!
 ```
 <img src="img/screen-2.webp" width=80% height=80%>
 
-## No more looking for properties in a long list of dictionaries or objects!
+### No more looking for properties in a long list of dictionaries or objects while in the terminal!
 
 <img src="img/screen-1.webp" width=80% height=80%>
 
 
 ## Features
 
-- **Tree View**: Visualize data structures as a tree for better clarity.
+- **Tree View**: Visualize data structures in the terminal as a tree for better clarity.
 - **Colorized Output**: Easily distinguish different parts of the data structure.
 - **Supports Multiple Data Types**: Works with dictionaries, lists, objects, namedtuples, and mixed structures.
 - **API Response Exploration**: Simplifies debugging and understanding of API responses, especially for complex outputs.
