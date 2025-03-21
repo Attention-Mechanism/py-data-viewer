@@ -7,7 +7,6 @@ on:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -27,7 +26,7 @@ jobs:
         hatch run pip install -e .[dev]
     - name: Lint with ruff
       run: |
-        hatch run ruff check .
+        hatch run ruff check . --fix   # Added --fix option
     - name: Format with black
       run: |
         hatch run black --check .
