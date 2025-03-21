@@ -32,5 +32,7 @@ jobs:
       run: |
         hatch run black .
     - name: Test with pytest
+      env:
+        PYTHONPATH: ./src
       run: |
         hatch run pytest
