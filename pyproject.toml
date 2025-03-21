@@ -4,11 +4,18 @@ build-backend = "hatchling.build"
 
 [project]
 name = "py-data-viewer"
-version = "0.0.6.1"
+version = "0.0.7"
 authors = [
   { name="Matt Lucero", email="matt_lucero@outlook.com" },
 ]
 description = "A python library to display data structure values for easier navigation and exploration."
+keywords = [
+    "python",
+    "data",
+    "viewer",
+    "debugging",
+    "exploration",
+]
 readme = "README.md"
 requires-python = ">=3.8"
 classifiers = [

@@ -2,7 +2,7 @@
 
 `py-data-viewer` is a lightweight Python library that makes exploring and navigating complex data structures in the terminal effortless. It provides a clear, tree-based visualization of nested dictionaries, lists, objects, and more, making debugging and data analysis more efficient. No more getting lost in complex nested structures or struggling to understand what's inside your data or how to access them! 
 
-_Trees for complex data structures, Trees for simple data structures, Trees for everything!!_
+> _Trees for complex data structures, Trees for simple data structures, Trees for everything!!_
 
 ### No more confusion with complex data structures or asking "what's inside this dictionary!?"
 
@@ -16,6 +16,9 @@ async def some_async_fn():
 <img src="img/screen-2.webp" width=80% height=80%>
 
 ### No more looking for properties in a long list of dictionaries or objects while in the terminal!
+```python
+vprint(data, "result")
+```
 
 <img src="img/screen-1.webp" width=80% height=80%>
 
@@ -28,17 +31,19 @@ async def some_async_fn():
 - **API Response Exploration**: Simplifies debugging and understanding of API responses, especially for complex outputs.
 - **Programmatic Usage**: Integrate directly into your Python scripts with the `vprint` function.
 
----
 
 ## Installation
 
 To install the package, use pip:
 
 ```bash
-pip install py-data-viewer
+pip install py-data-viewer -U
 ```
 
----
+Then, import:
+```python
+from py_data_viewer import vprint
+```
 
 ## Usage
 
@@ -70,29 +75,29 @@ response = {
     ],
 }
 
-vprint(response, var_name="response")
+vprint(response, var_name="messages", colorize=False)
 ```
 
-Output:
+Output showing you exactly how to access the data you want:
 ```
-response
-├── response.chat_message = dict with 3 items
-│   ├── response.chat_message.source = 'Assistant'
-│   ├── response.chat_message.content = 'This is a response from an LLM.'
-│   └── response.chat_message.metadata = dict with 0 items
-└── response.inner_messages = list with 2 items
-    ├── response.inner_messages[0] = dict with 2 items
-    │   ├── response.inner_messages[0].type = 'ToolCallRequestEvent'
-    │   └── response.inner_messages[0].content = list with 1 items
-    │       └── response.inner_messages[0].content[0] = dict with 2 items
-    │           ├── response.inner_messages[0].content[0].name = 'search'
-    │           └── response.inner_messages[0].content[0].arguments = '{"query":"example"}'
-    └── response.inner_messages[1] = dict with 2 items
-        ├── response.inner_messages[1].type = 'ToolCallExecutionEvent'
-        └── response.inner_messages[1].content = list with 1 items
-            └── response.inner_messages[1].content[0] = dict with 2 items
-                ├── response.inner_messages[1].content[0].name = 'search'
-                └── response.inner_messages[1].content[0].content = 'Search result here.'
+messages
+├── messages.chat_message = dict with 3 items
+│   ├── messages.chat_message.source = 'Assistant'
+│   ├── messages.chat_message.content = 'This is a response from an LLM.'
+│   └── messages.chat_message.metadata = dict with 0 items
+└── messages.inner_messages = list with 2 items
+    ├── messages.inner_messages[0] = dict with 2 items
+    │   ├── messages.inner_messages[0].type = 'ToolCallRequestEvent'
+    │   └── messages.inner_messages[0].content = list with 1 items
+    │       └── messages.inner_messages[0].content[0] = dict with 2 items
+    │           ├── messages.inner_messages[0].content[0].name = 'search'
+    │           └── messages.inner_messages[0].content[0].arguments = '{"query":"example"}'
+    └── messages.inner_messages[1] = dict with 2 items
+        ├── messages.inner_messages[1].type = 'ToolCallExecutionEvent'
+        └── messages.inner_messages[1].content = list with 1 items
+            └── messages.inner_messages[1].content[0] = dict with 2 items
+                ├── messages.inner_messages[1].content[0].name = 'search'
+                └── messages.inner_messages[1].content[0].content = 'Search result here.'
 ```
 
 #### Example: Exploring a Complex Data Structure
@@ -108,25 +113,22 @@ data = {
     ],
 }
 
-vprint(data, var_name="data", tree_view=True)
+vprint(data, var_name="data")
 ```
 
----
 
 ## Advanced Options
 
 The `vprint` function supports several options to customize the output:
 
 - `var_name`: Specify the variable name to display in the output.
-- `indent_size`: Set the number of spaces for indentation (default: `2`).
 - `colorize`: Enable or disable colorized output (default: `True`).
 
 Example:
 ```python
-vprint(data, var_name="custom_data_name", indent_size=4, colorize=False)
+vprint(data, var_name="custom_data_name", colorize=False)
 ```
 
----
 
 ## Contributing
 
@@ -137,13 +139,11 @@ Contributions are welcome! To contribute:
 3. Commit your changes and push the branch.
 4. Open a pull request.
 
----
 
 ## License
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
----
 
 ## Links
 
