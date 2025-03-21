@@ -29,7 +29,8 @@ license = "MIT"
 license-files = ["LICENSE"]
 
 [project.urls]
-Homepage = "https://github.com/"
+Homepage = "https://github.com/Attention-Mechanism/py-data-viewer"
+Repository = "https://github.com/Attention-Mechanism/py-data-viewer"
 
 [project.optional-dependencies]
 dev = [
@@ -37,3 +38,22 @@ dev = [
     "pytest",
     "black",
 ]
+
+[tool.ruff]
+target-version = "py38"
+line-length = 100
+select = [
+    "E",  # pycodestyle errors
+    "F",  # pyflakes
+    "I",  # isort
+]
+ignore = []
+
+[tool.ruff.isort]
+known-first-party = ["py_data_viewer"]
+
+[tool.black]
+line-length = 100
+skip-string-normalization = false
+target-version = ['py38', 'py39', 'py310', 'py311', 'py312']
+
