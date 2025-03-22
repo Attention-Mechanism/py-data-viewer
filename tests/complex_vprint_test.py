@@ -1,4 +1,4 @@
-from src.py_data_viewer.py_data_viewer import vprint
+from py_data_viewer import vprint
 from tests.service import generate_mock_response
 import io
 import sys
