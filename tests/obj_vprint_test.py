@@ -1,8 +1,7 @@
-from src.py_data_viewer.py_data_viewer import vprint
-from src.py_data_viewer.py_data_viewer import ExampleData
+from py_data_viewer import vprint
+from py_data_viewer.py_data_viewer import ExampleData
 import io  # For capturing output
 import sys  # For redirecting stdout
-import re  # For regex replacement
 
 
 def test_vprint_object_tree_view():
