@@ -1,9 +1,9 @@
 import os
 from typing import Any, Optional
-from .py_data_viewer import DataViewer, TreeNode
+from .shared import TreeNode, DataViewer
 
 
-def output(data: Any, file_path: str, var_name: Optional[str] = None):
+def file_output(data: Any, file_path: str, var_name: Optional[str] = None):
     """
     Outputs the exploration of a data structure to a file.
 
