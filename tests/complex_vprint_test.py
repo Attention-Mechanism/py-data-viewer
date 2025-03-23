@@ -1,7 +1,8 @@
-from py_data_viewer import vprint
-from tests.service import generate_mock_response
 import io
 import sys
+
+from py_data_viewer import vprint
+from tests.service import generate_mock_response
 
 
 def test_vprint_complex_structure():

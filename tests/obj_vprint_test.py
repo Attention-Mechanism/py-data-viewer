@@ -1,7 +1,8 @@
-from py_data_viewer import vprint
-from py_data_viewer.py_data_viewer import ExampleData
 import io  # For capturing output
 import sys  # For redirecting stdout
+
+from py_data_viewer import vprint
+from py_data_viewer.py_data_viewer import ExampleData
 
 
 def test_vprint_object_tree_view():
