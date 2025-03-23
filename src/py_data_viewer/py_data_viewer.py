@@ -1,5 +1,6 @@
-from typing import Any, NamedTuple, Optional, List
 import argparse
+from typing import Any, NamedTuple, Optional
+
 from .file_output import file_output
 from .types import DataViewer
 
@@ -93,26 +94,11 @@ if __name__ == "__main__":
         help="Type of data structure to explore",
     )
 
-    # TODO: REMOVE
-    # parser.add_argument(
-    #     "--indent",
-    #     type=int,
-    #     default=2,
-    #     help="Indentation size for nested levels",
-    # )
-
     parser.add_argument(
         "--no-color",
         action="store_true",
         help="Disable colorized output",
     )
-
-    # TODO: REMOVE
-    # parser.add_argument(
-    #     "--tree",
-    #     action="store_true",
-    #     help="Display as a tree structure",
-    # )
 
     args = parser.parse_args()
 
@@ -126,14 +112,12 @@ if __name__ == "__main__":
     navigator.explore()
 
     print("\nUsage examples:")
-    print(f"  python value_navigator.py --type dict     # Explore a dictionary")
-    print(f"  python value_navigator.py --type list     # Explore a list")
-    print(f"  python value_navigator.py --type object   # Explore an object")
-    print(f"  python value_navigator.py --type namedtuple  # Explore a namedtuple")
-    print(f"  python value_navigator.py --type complex  # Explore a complex mixed structure")
-    # TODO: REMOVE
-    # print(f"  python value_navigator.py --indent 4      # Use 4 spaces for indentation")
-    print(f"  python value_navigator.py --no-color      # Disable colored output")
+    print("python value_navigator.py --type dict     # Explore a dictionary")
+    print("python value_navigator.py --type list     # Explore a list")
+    print("python value_navigator.py --type object   # Explore an object")
+    print("python value_navigator.py --type namedtuple  # Explore a namedtuple")
+    print("python value_navigator.py --type complex  # Explore a complex mixed structure")
+    print("python value_navigator.py --no-color      # Disable colored output")
 
     print("\nExample with automatically detected variable name:")
     example_data = {"key": "value"}
