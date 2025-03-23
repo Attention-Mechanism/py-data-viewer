@@ -1,6 +1,7 @@
 from typing import Any, List
 import re
 
+
 class TreeNode:
     """Represents a node in the object tree visualization"""
 
@@ -58,7 +59,9 @@ class DataViewer:
         else:
             parent_node.is_leaf = True
 
-    def _print_tree(self, node: TreeNode, prefix: str = "", is_last: bool = True, depth: int = 0) -> None:
+    def _print_tree(
+        self, node: TreeNode, prefix: str = "", is_last: bool = True, depth: int = 0
+    ) -> None:
         """Print the tree structure with extracted values"""
         if depth == 0:
             print(f"{node.path}")
