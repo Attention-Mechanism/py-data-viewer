@@ -56,10 +56,7 @@ def generate_mock_response():
         source="Assistant",
         models_usage=None,
         metadata={},
-        content=(
-            "Acetaminophen can mask a fever but may reduce the risk of adverse events such as"
-            " seizures."
-        ),
+        content=("Acetaminophen can mask a fever but may reduce the risk of adverse events such as" " seizures."),
         type_="ToolCallSummaryMessage",
     )
 
@@ -84,8 +81,7 @@ def generate_mock_response():
         content=[
             FunctionExecutionResult(
                 content=(
-                    "Acetaminophen can mask a fever but may reduce the risk of adverse events such"
-                    " as seizures."
+                    "Acetaminophen can mask a fever but may reduce the risk of adverse events such" " as seizures."
                 ),
                 name="web_search",
                 call_id="",
