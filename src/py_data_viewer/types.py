@@ -1,5 +1,5 @@
-from typing import Any, List
 import re
+from typing import Any, List
 
 
 class TreeNode:
