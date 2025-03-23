@@ -43,14 +43,14 @@ pytest = "^7.4.2"
 [tool.ruff]
 target-version = "py38"
 line-length = 120
-select = [
+lint.select = [
     "E",  # pycodestyle errors
     "F",  # pyflakes
     "I",  # isort
 ]
-ignore = []
+lint.ignore = []
 
-[tool.ruff.isort]
+[tool.ruff.lint.isort]
 known-first-party = ["py_data_viewer"]
 
 [tool.black]
