@@ -84,9 +84,7 @@ def get_sample_data(data_type):
 
 if __name__ == "__main__":
     # Set up command line argument parser
-    parser = argparse.ArgumentParser(
-        description="Explore and navigate through different data structures"
-    )
+    parser = argparse.ArgumentParser(description="Explore and navigate through different data structures")
     parser.add_argument(
         "--type",
         choices=["dict", "list", "object", "namedtuple", "complex"],
