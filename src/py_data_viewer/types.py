@@ -64,7 +64,8 @@ class DataViewer:
     ) -> None:
         """Print the tree structure with extracted values"""
         if depth == 0:
-            print(f"{node.path}")
+            path_display = Colors.colorize_path(node.path) if self.colorize else node.path
+            print(f"{path_display}")
             for i, child in enumerate(node.children):
                 is_last_child = i == len(node.children) - 1
                 self._print_tree(child, "", is_last_child, depth + 1)
@@ -81,7 +82,8 @@ class DataViewer:
         else:
             node_value = repr(node.value)
 
-        print(f"{prefix}{branch}{node.path} = {node_value}")
+        path_display = Colors.colorize_path(node.path) if self.colorize else node.path
+        print(f"{prefix}{branch}{path_display} = {node_value}")
 
         new_prefix = prefix + ("    " if is_last else "│   ")
 
