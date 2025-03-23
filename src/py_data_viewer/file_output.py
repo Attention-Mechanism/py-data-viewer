@@ -1,6 +1,6 @@
 import os
 from typing import Any, Optional
-from .shared import TreeNode, DataViewer
+from .types import TreeNode, DataViewer
 
 
 def file_output(data: Any, file_path: str, var_name: Optional[str] = None):

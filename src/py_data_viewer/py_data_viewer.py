@@ -1,7 +1,7 @@
 from typing import Any, NamedTuple, Optional, List
 import argparse, re, inspect, ast
 from .file_output import file_output
-from .shared import TreeNode, DataViewer
+from .types import TreeNode, DataViewer
 
 
 class Colors:
