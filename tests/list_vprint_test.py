@@ -1,6 +1,7 @@
-from py_data_viewer import vprint
 import io  # For capturing output
 import sys  # For redirecting stdout
+
+from py_data_viewer import vprint
 
 
 def test_vprint_list_tree_view():
