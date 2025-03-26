@@ -29,6 +29,7 @@ jobs:
     - name: Lint with ruff
       run: |
         poetry run ruff check .
+        poetry run ruff check . --statistics
       continue-on-error: true
     - name: Format with ruff
       run: |
