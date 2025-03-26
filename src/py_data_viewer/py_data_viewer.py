@@ -84,7 +84,9 @@ def get_sample_data(data_type):
 
 if __name__ == "__main__":
     # Set up command line argument parser
-    parser = argparse.ArgumentParser(description="Explore and navigate through different data structures")
+    parser = argparse.ArgumentParser(
+        description="Explore and navigate through different data structures"
+    )
     parser.add_argument(
         "--type",
         choices=["dict", "list", "object", "namedtuple", "complex"],
@@ -114,12 +116,16 @@ if __name__ == "__main__":
     print("python value_navigator.py --type list     # Explore a list")
     print("python value_navigator.py --type object   # Explore an object")
     print("python value_navigator.py --type namedtuple  # Explore a namedtuple")
-    print("python value_navigator.py --type complex  # Explore a complex mixed structure")
+    print(
+        "python value_navigator.py --type complex  # Explore a complex mixed structure"
+    )
     print("python value_navigator.py --no-color      # Disable colored output")
 
     print("\nExample with automatically detected variable name:")
     example_data = {"key": "value"}
-    DataViewer(example_data).explore()  # Should detect "example_data" but no and thats okay
+    DataViewer(
+        example_data
+    ).explore()  # Should detect "example_data" but no and thats okay
 
     print("\nExample with explicit variable name:")
     data = {"key": "value"}

@@ -27,7 +27,9 @@ def file_output(data: Any, file_path: str, var_name: Optional[str] = None):
     # Write the tree to the file
     with open(file_path, "w", encoding="utf-8") as file:
 
-        def write_tree(node: TreeNode, prefix: str = "", is_last: bool = True, depth: int = 0):
+        def write_tree(
+            node: TreeNode, prefix: str = "", is_last: bool = True, depth: int = 0
+        ):
             if depth == 0:
                 file.write(f"{node.path}\n")
                 for i, child in enumerate(node.children):

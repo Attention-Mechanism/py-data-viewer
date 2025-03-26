@@ -2,10 +2,10 @@
 requires = ["poetry-core>=2.0.0,<3.0.0"]
 build-backend = "poetry.core.masonry.api"
 
-[tool.poetry]
+[project]
 name = "py-data-viewer"
-version = "0.0.9"
-authors = ["Matt Lucero <matt_lucero@outlook.com>"]
+version = "0.1.0"
+authors = [{name="Matt Lucero", email= "matt_lucero@outlook.com"}]
 description = "A python library to display data structure values for easier navigation and exploration."
 keywords = [
     "python",
@@ -35,6 +35,9 @@ license = "MIT"
 Homepage = "https://github.com/Attention-Mechanism/py-data-viewer"
 Repository = "https://github.com/Attention-Mechanism/py-data-viewer"
 
+[tool.poetry.dependencies]
+python = "^3.8"
+
 [tool.poetry.group.dev.dependencies]
 black = "^23.9.1"
 ruff = "^0.11.2"
@@ -42,7 +45,7 @@ pytest = "^7.4.2"
 
 [tool.ruff]
 target-version = "py38"
-line-length = 120
+line-length = 88
 lint.select = [
     "E",  # pycodestyle errors
     "F",  # pyflakes
@@ -53,10 +56,6 @@ lint.ignore = []
 [tool.ruff.lint.isort]
 known-first-party = ["py_data_viewer"]
 
-[tool.black]
-line-length = 120
-skip-string-normalization = false
-target-version = ['py38', 'py39', 'py310', 'py311', 'py312']
-
-[tool.poetry.dependencies]
-python = "^3.8"
+[tool.ruff.format]
+docstring-code-format = true
+preview = true
