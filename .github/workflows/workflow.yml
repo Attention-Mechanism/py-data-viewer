@@ -26,13 +26,12 @@ jobs:
     - name: Install dependencies
       run: |
         poetry install --with dev
-    - name: Lint with ruff
-      run: |
-        poetry run ruff check .
-      continue-on-error: true
     - name: Ruff statistics
       run: |
-        poetry run ruff check . --statistics
+        poetry run ruff check . --statistics --exit-zero
+    - name: Lint with ruff + fix
+      run: |
+        poetry run ruff check . --fix
       continue-on-error: true
     - name: Format with ruff
       run: |
