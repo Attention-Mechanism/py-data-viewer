@@ -33,7 +33,9 @@ class DataViewer:
         self._build_tree(self.data, self.var_name, self.tree_root)
         self._print_tree(self.tree_root)
 
-    def _build_tree(self, data: Any, path: str, parent_node: TreeNode, depth: int = 0) -> None:
+    def _build_tree(
+        self, data: Any, path: str, parent_node: TreeNode, depth: int = 0
+    ) -> None:
         """Build a tree representation of the data structure"""
         if isinstance(data, dict):
             for key, value in data.items():
@@ -59,10 +61,14 @@ class DataViewer:
         else:
             parent_node.is_leaf = True
 
-    def _print_tree(self, node: TreeNode, prefix: str = "", is_last: bool = True, depth: int = 0) -> None:
+    def _print_tree(
+        self, node: TreeNode, prefix: str = "", is_last: bool = True, depth: int = 0
+    ) -> None:
         """Print the tree structure with extracted values"""
         if depth == 0:
-            path_display = Colors.colorize_path(node.path) if self.colorize else node.path
+            path_display = (
+                Colors.colorize_path(node.path) if self.colorize else node.path
+            )
             print(f"{path_display}")
             for i, child in enumerate(node.children):
                 is_last_child = i == len(node.children) - 1
