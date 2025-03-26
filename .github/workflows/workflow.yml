@@ -30,9 +30,10 @@ jobs:
       run: |
         poetry run ruff check .
       continue-on-error: true
-    - name: Format with black
+    - name: Format with ruff
       run: |
-        poetry run black .
+        poetry run ruff format .
+      continue-on-error: true
     - name: Test with pytest
       run: |
         poetry run pytest
