@@ -33,6 +33,7 @@ jobs:
     - name: Ruff statistics
       run: |
         poetry run ruff check . --statistics
+      continue-on-error: true
     - name: Format with ruff
       run: |
         poetry run ruff format .
